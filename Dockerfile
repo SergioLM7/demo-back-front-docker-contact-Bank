@@ -4,6 +4,6 @@ COPY . .
 RUN npm install 
 WORKDIR /app/client
 RUN npm install && npm run build
-# WORKDIR /app
+WORKDIR /app
 CMD ["npm", "run", "deploy"]
 EXPOSE 10000
