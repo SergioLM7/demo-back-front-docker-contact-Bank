@@ -23,9 +23,6 @@
 
  ```
 
-
-
-
 ### In Render
 
 1. Go to [Render](https://render.com/)
