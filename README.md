@@ -67,3 +67,4 @@ or upload your `.env`
 
 8. Deploy
 
+You can visit a deployed version of this proejct [here](https://demo-mern.onrender.com/)
