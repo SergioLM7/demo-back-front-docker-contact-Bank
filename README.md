@@ -4,12 +4,18 @@
 ### In your project
  1. Folder structure
 
- Store your react app in a folder named client in the root of your project
+ Store your react app in a folder named client in the root of your server project.
 
  2. Install dependencies
   - `npm install concurrently nodemon`
 
- 3. add script to backend package.json
+ 3. Add script to server package.json
+
+ You will want to keep scripts to run your server and your client apps separately("start", "client").
+
+ Also you will want to keep script for development and for production ("dev", "deploy").
+ 
+
  ```
     "scripts": {
       "start": "node server.js",
@@ -22,7 +28,7 @@
     }
 
  ```
-
+ Both apps will run in the same port, this will prevent CORS policy to apply. We will use `concurrently` to run both at the same time.  
 
 
 
@@ -34,19 +40,19 @@
 
 3. Select Web Service
 
-4. On the right click beneath git on connect account and connect your git account and give appropriate permissions
+4. On the right, click connect account beneath git and connect your git account and give appropriate permissions for your repository (or allow all).
 
-5. Click on Connect to connect your repository
+5. Click on Connect to connect your repository.
 
-6. Fill out your deployment settings 
+6. Fill out your deployment settings. 
 
 - Name: As you wish
-- Region: The closest to your users
+- Region: Choose the closest to your users.
 - Branch: The gitHub branch from which you'll be deploying
 - Root Directory: Leave as it is
 - Runtime: Node
 - Build command, you must install dependencies and build your client app: `npm install && cd client && npm install && npm run build`
-- Start command: `npm run production`
+- Start command: `npm run deploy`
 - Autodeploy: Yes
 - Deploy hook: Leave as it is
 
@@ -57,8 +63,7 @@ Add your environment variables
 ```
 MY_MONGO_URI=*****
 ```
-
-or upload your .env
+or upload your `.env`
 
 8. Deploy
 
