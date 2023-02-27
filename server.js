@@ -15,11 +15,11 @@ const app = express();
 //  replaced body parser
 app.use(express.json({ extended: false }));
 
-// *TEST ROUTE
-// app.use('/test',(req,res)=>{
-//     console.log("/test request called");
-//     res.send('Welcome to GeeksforGeeks');
-// })
+//*TEST ROUTE
+app.use('/test',(req,res)=>{
+    console.log("/test request called");
+    res.send('Welcome to GeeksforGeeks');
+})
 
 // *CONTACT ROUTE
 app.use('/api/contacts', require('./routes/contact'));
