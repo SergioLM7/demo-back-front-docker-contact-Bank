@@ -30,6 +30,20 @@
  ```
  Both apps will run in the same port, this will prevent CORS policy to apply. We will use `concurrently` to run both at the same time.  
 
+#### To deploy with Docker 
+Add a Dockerfile to your project root
+```
+FROM node:18-alpine
+WORKDIR /app
+COPY . .
+RUN npm install 
+WORKDIR /app/client
+RUN npm install && npm run build
+WORKDIR /app
+CMD ["npm", "run", "deploy"]
+EXPOSE 8080
+
+```
 
 
 ### In Render
@@ -56,12 +70,15 @@
 - Autodeploy: Yes
 - Deploy hook: Leave as it is
 
+To deploy with Docker, Render will detect automatically your Dockerfile in your root and set up the settings.
+
 7. Click on advanced
 
 Add your environment variables
 
 ```
 MY_MONGO_URI=*****
+NODE_ENV='production'
 ```
 or upload your `.env`
 
