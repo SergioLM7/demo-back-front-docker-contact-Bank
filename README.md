@@ -78,7 +78,7 @@ Add your environment variables
 
 ```
 MY_MONGO_URI=*****
-NODE_ENV='production'
+NODE_ENV=production
 ```
 or upload your `.env`
 
